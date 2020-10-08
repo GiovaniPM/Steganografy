@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\codetyphon\fpc\fpc64\bin\x86_64-win64\fpc.exe" Date="1361609261"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -gw2 -godwarfsets -gl -WG -l -vewnhibq -FiC:\Users\giova\projetos\Steganography\lib\x86_64-win64 -FuC:\codetyphon\typhon\lcl\units\x86_64-win64\win32 -FuC:\codetyphon\typhon\lcl\units\x86_64-win64 -FuC:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64 -FuC:\codetyphon\typhon\packager\units\x86_64-win64 -FuC:\Users\giova\projetos\Steganography\ -FUC:\Users\giova\projetos\Steganography\lib\x86_64-win64\ -FEC:\Users\giova\projetos\Steganography\ -oC:\Users\giova\projetos\Steganography\project1.exe -dLCL -dadLCL -dLCLwin32 project1.ppr"/>
+</CONFIG>
