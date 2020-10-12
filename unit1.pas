@@ -62,42 +62,6 @@ implementation
 
 { TForm1 }
 
-//function TForm1.EncryptSteganography(ImgSource:TImage; TxtSource:TMemo) : TImage;
-//var
-//  x, y, i, j: Integer;
-//  PixelData: TColor;
-//  CharMask, CharData: Byte;
-//  imgTarget: TImage;
-//begin
-//  imgTarget := TImage.Create(Self);
-//  imgTarget.Picture.Assign(ImgSource.Picture);
-//  imgTarget.Picture.Bitmap.PixelFormat := pf32bit;
-//  x := 0;
-//  y := 0;
-//  with imgTarget.Picture.Bitmap do
-//    for i := 1 to Length(TxtSource.Text) do
-//    begin
-//      CharMask := $80;
-//      for j := 1 to 8 do
-//      begin
-//        CharData := Byte(TxtSource.Text[i]) and CharMask;
-//        if (CharData <> 0) then
-//        begin
-//          // Aqui é a pegadinha
-//          PixelData := Canvas.Pixels[x, y] xor $1;
-//          Canvas.Pixels[x, y] := PixelData;
-//        end;
-//        x := (x + 1) mod Width;
-//        if (x = 0) then
-//        begin
-//          Inc(y);
-//        end;
-//        CharMask := CharMask shr 1;
-//      end;
-//    end;
-//  Result := imgTarget;
-//end;
-
 function TForm1.BinToInt(Value: String): LongInt;
 var
   i, Size: Integer;
@@ -133,7 +97,7 @@ begin
   k        := 1;
   j        := Length(TxtSource.Text);                       //Tamanho do texto
   ByteData := IntToBin(j, 24);                              //Cabeçalho como o tamanho do texto em binário
-  For i := 1 to 24 do                                        //Adciona o cabeçalho de 3 bytes
+  For i := 1 to 24 do                                       //Adciona o cabeçalho de 3 bytes
   begin
     Vector[i] := ByteData.Substring(i-1, 1);
     k := k + 1;
@@ -141,7 +105,7 @@ begin
   //
   for i := 1 to j do
   begin
-    ByteData := IntToBin(ord(TxtSource.Text[i]), 8);   //Adiciona texto original em binário
+    ByteData := IntToBin(ord(TxtSource.Text[i]), 8);        //Adiciona texto original em binário
     for j := 0 to 7 do
     begin
       Vector[k] := ByteData.Substring(j,1);
